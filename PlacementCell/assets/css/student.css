@@ -1,0 +1,67 @@
+aside {
+  position: absolute;
+  left: 75%;
+  border: 2px solid orange;
+  height: 500px;
+  width: 300px;
+  padding: 20px;
+}
+
+aside div {
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 75%;
+  height: 25%;
+}
+
+input {
+  padding: 5% 10%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+aside select {
+  padding: 5% 10%;
+  width: 120%;
+  border: 1px solid black;
+}
+
+aside button {
+  padding: 5% 10%;
+  width: 100%;
+  margin-left: 5%;
+  border: 1px solid black;
+}
+
+#main {
+  width: 70%;
+  height: 100vh;
+  border: 2px solid black;
+}
+
+#available-students {
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+}
+
+#available-students table {
+  margin: auto;
+  width: 80%;
+}
+
+table td {
+  height: 4rem;
+  width: 25%;
+  margin: auto;
+  overflow: hidden;
+}
+
+#headings {
+  font-weight: bold;
+}
+
+h4 {
+  text-align: center;
+}
