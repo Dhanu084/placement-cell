@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/student.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  </head>
+  <body>
+    <aside>
+      <h4>Register Student</h4>
+      <form action="/students/create-student" method="POST">
+        <div>
+          <input type="text" placeholder="name" name="name" />
+        </div>
+        <div>
+          <select name="batch" id="batch">
+            <option value="Oct 2019">Oct 2019</option>
+            <option value="Jan 2020">Jan 2020</option>
+            <option value="Feb 2020">Feb 2020</option>
+          </select>
+        </div>
+
+        <div>
+          <input type="text" name="dsa" placeholder="dsa" />
+        </div>
+        <div>
+          <input type="text" name="webd" placeholder="web" />
+        </div>
+        <div>
+          <input type="text" name="react" placeholder="react" />
+        </div>
+
+        <div>
+          <button>Create Student</button>
+        </div>
+      </form>
+    </aside>
+
+    <div id="main">
+      <form action="/students/view-students" method="POST">
+        <select name="batch" id="batch">
+          <option value="Oct 2019" name="Oct 2019">Oct 2019</option>
+          <option value="Jan 2020" name="Jan 2020">Jan 2020</option>
+          <option value="Feb 2020" name="Feb 2020">Feb 2020</option>
+        </select>
+        <button>Fetch</button>
+      </form>
+      <p>Listing <%= students.length%> students</p>
+      <div id="available-students">
+        <table>
+          <tr id="headings">
+            <td>Name</td>
+            <td>Batch</td>
+            <td>DSA</td>
+            <td>WebD</td>
+            <td>React</td>
+          </tr>
+          <% for(student of students) {%>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.batch %></td>
+            <td><%= student.courses.dsa %></td>
+            <td><%= student.courses.webd %></td>
+            <td><%= student.courses.react %></td>
+          </tr>
+          <%}%>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

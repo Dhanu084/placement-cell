@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <aside>
+      <h4>Register Student</h4>
+      <form action="/students/create-student" method="POST">
+        <div>
+          <input type="text" placeholder="name" name="name" />
+        </div>
+        <div>
+          <select name="batch" id="batch">
+            <option value="Oct 2019">Oct 2019</option>
+            <option value="Jan 2020">Jan 2020</option>
+            <option value="Feb 2020">Feb 2020</option>
+          </select>
+        </div>
+
+        <div>
+          <input type="text" name="dsa" placeholder="dsa" />
+        </div>
+        <div>
+          <input type="text" name="webd" placeholder="web" />
+        </div>
+        <div>
+          <input type="text" name="react" placeholder="react" />
+        </div>
+
+        <div>
+          <button>Create Student</button>
+        </div>
+      </form>
+    </aside>
+  </body>
+</html>
