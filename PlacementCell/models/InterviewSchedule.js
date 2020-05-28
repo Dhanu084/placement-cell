@@ -10,8 +10,8 @@ const interviewScheduleSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Student',
     },
-    result: {
-      type: String,
+    placed: {
+      type: Boolean,
     },
   },
   {

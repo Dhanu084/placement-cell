@@ -4,36 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/interviews.css" />
   </head>
   <body>
     <aside>
-      <h4>Register Student</h4>
-      <form action="/students/create-student" method="POST">
+      <h4>Create Interview</h4>
+      <form action="/interviews/create-interview" method="POST">
         <div>
-          <input type="text" placeholder="name" name="name" />
-        </div>
-        <div>
-          <select name="batch" id="batch">
-            <option value="Oct 2019">Oct 2019</option>
-            <option value="Jan 2020">Jan 2020</option>
-            <option value="Feb 2020">Feb 2020</option>
-          </select>
+          <input type="text" placeholder="company" name="company" />
         </div>
 
         <div>
-          <input type="text" name="dsa" placeholder="dsa" />
-        </div>
-        <div>
-          <input type="text" name="webd" placeholder="web" />
-        </div>
-        <div>
-          <input type="text" name="react" placeholder="react" />
+          <input type="date" name="date" placeholder="date" />
         </div>
 
         <div>
-          <button>Create Student</button>
+          <button>Create Interview</button>
         </div>
       </form>
     </aside>
+
+    <div id="main">
+      <div id="available-interviews">
+        <table>
+          <tr id="headings">
+            <td>company</td>
+            <td>date</td>
+          </tr>
+          <% if (interviews.length>0) {%> <% for(interview of interviews) {%>
+          <tr>
+            <td>
+              <a href="/interviews/single-interview/<%= interview.id %>"
+                ><%= interview.company %></a
+              >
+            </td>
+            <td>
+              <%= interview.date.getDate()+"/"+interview.date.getMonth() %>
+            </td>
+          </tr>
+
+          <%}%> <%}%>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
