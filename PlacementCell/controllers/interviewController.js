@@ -157,6 +157,7 @@ module.exports.downloadCSV = async function (req, res) {
     //   res.set('Content-Type', 'text/csv');
     //   res.status(200).send(csv);
     // });
+
     res.setHeader('Content-Type', 'text/csv');
     res.setHeader(
       'Content-Disposition',
