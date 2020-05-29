@@ -9,7 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-stringify": "^5.5.0",
+    "csv-writer": "^1.6.0",
+    "download-csv": "^1.1.1",
     "express": "^4.17.1",
-    "mongoose": "^5.9.16"
+    "json2csv": "^5.0.1",
+    "mongoose": "^5.9.16",
+    "stringify": "^5.2.0"
   }
 }

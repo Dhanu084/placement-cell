@@ -4,11 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/singleInterview.css" />
   </head>
   <body>
+    <a href="/interviews/downloadCSV"><button>Download CSV</button></a>
     <div>
-      <p><%= interview.company %></p>
-      <p><%= interview.date.getDate()+"/"+interview.date.getMonth() %></p>
+      <h2>
+        <%= interview.company %>
+        <small
+          ><%= interview.date.getDate()+"/"+interview.date.getMonth() %></small
+        >
+      </h2>
+      <p></p>
     </div>
+
+    <div id="schedules">
+      <table>
+        <% if(schedules.length>0) {%> <%for(schedule of schedules) {%>
+        <tr>
+          <td><%= schedule.student.name %></td>
+          <td>
+            <%= schedule.placed?"Placed":"Not Placed" %>
+          </td>
+          <td>
+            <a href="/interviews/changeResult/?scheduleId=<%= schedule.id %>"
+              ><button>Change Result</button></a
+            >
+          </td>
+        </tr>
+        <%}%> <%}%>
+      </table>
+    </div>
+    <aside id="main">
+      <form
+        action="/students/view-students?id=<%= interview.id%>"
+        method="POST"
+      >
+        <select name="batch" id="batch">
+          <option value="Oct 2019" name="Oct 2019">Oct 2019</option>
+          <option value="Jan 2020" name="Jan 2020">Jan 2020</option>
+          <option value="Feb 2020" name="Feb 2020">Feb 2020</option>
+        </select>
+        <button>Fetch</button>
+      </form>
+      <p>Listing <%= students.length%> students</p>
+      <div id="available-students">
+        <table>
+          <tr id="headings">
+            <td>Name</td>
+            <td>Batch</td>
+            <td>DSA</td>
+            <td>WebD</td>
+            <td>React</td>
+          </tr>
+          <% for(student of students) {%>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.batch %></td>
+            <td><%= student.courses.dsa %></td>
+            <td><%= student.courses.webd %></td>
+            <td><%= student.courses.react %></td>
+            <td>
+              <a
+                href="/interviews/assignInterview/?interviewId=<%= interview.id%>&studentId=<%= student.id %>"
+                ><button>Assign</button></a
+              >
+            </td>
+          </tr>
+          <%}%>
+        </table>
+      </div>
+    </aside>
   </body>
 </html>

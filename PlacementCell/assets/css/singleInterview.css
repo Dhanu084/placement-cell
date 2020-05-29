@@ -1,0 +1,20 @@
+aside {
+  position: absolute;
+  left: 50%;
+  border: 2px solid orange;
+  height: 500px;
+  width: auto;
+  padding: 20px;
+  top: 0px;
+}
+
+table td {
+  height: 4rem;
+  width: 25%;
+  margin: auto;
+  overflow: hidden;
+}
+
+#schedules {
+  width: 60%;
+}
