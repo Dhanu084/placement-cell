@@ -36,7 +36,6 @@ aside button {
 #main {
   width: 70%;
   height: 100vh;
-  border: 2px solid black;
 }
 
 #available-students {
@@ -64,4 +63,15 @@ table td {
 
 h4 {
   text-align: center;
+}
+
+#main select {
+  padding: 1% 5%;
+}
+#main option {
+  padding: 14px;
+}
+#fetch {
+  padding: 1% 3%;
+  margin-left: 5px;
 }

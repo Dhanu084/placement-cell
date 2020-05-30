@@ -1,12 +1,15 @@
 aside {
   position: absolute;
-  left: 75%;
+  top: 20%;
+  left: 65%;
   border: 2px solid orange;
   height: 500px;
   width: 300px;
   padding: 20px;
 }
-
+body {
+  margin-left: 2%;
+}
 aside div {
   margin-top: 10%;
   margin-left: 5%;
@@ -36,9 +39,12 @@ aside button {
 #main {
   width: 70%;
   height: 100vh;
-  border: 2px solid black;
+  margin-left: 20%;
 }
-
+#main a {
+  text-decoration: none;
+  font-size: 1.8rem;
+}
 #available-students {
   margin-top: 5%;
   width: 100%;
@@ -64,4 +70,11 @@ table td {
 
 h4 {
   text-align: center;
+}
+
+#main select {
+  padding: 5% 10%;
+}
+table th {
+  font-size: 2rem;
 }

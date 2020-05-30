@@ -1,0 +1,33 @@
+#nav {
+  position: absolute;
+  left: 75%;
+}
+
+#navbar {
+  width: 100%;
+  height: 4rem;
+  border: 2px solid black;
+  display: flex;
+  margin-bottom: 5%;
+  background-color: black;
+  color: white;
+  font-style: helevetica;
+}
+#navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+#navbar h4 {
+  margin-left: 2%;
+}
+#navbar ul li {
+  display: inline;
+  margin: 10px;
+}
+
+#navbar button {
+  width: 7rem;
+  background-color: black;
+  border: 0px;
+}

@@ -11,10 +11,12 @@ passport.use(
     function (email, password, done) {
       Employee.findOne({ email: email }, function (err, employee) {
         if (err) {
-          console.log(err, passport);
+          console.log(err, 'passport');
           return done(err);
         }
-        if (!employee || employee.password != password) {
+        //console.log(employee);
+        if (!employee || employee.password !== password) {
+          //console.log('calling');
           return done(null, false);
         }
 
@@ -25,7 +27,7 @@ passport.use(
 );
 
 passport.serializeUser(function (employee, done) {
-  done(null, employee.id);
+  return done(null, employee.id);
 });
 
 passport.deserializeUser(function (id, done) {
@@ -34,6 +36,7 @@ passport.deserializeUser(function (id, done) {
       console.log(err);
       return done(err);
     }
+    //console.log(employee);
     return done(null, employee);
   });
 });

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/interviews.css" />
   </head>
   <body>
+    <%- include('_navbar.ejs') %>
     <aside>
       <h4>Create Interview</h4>
       <form action="/interviews/create-interview" method="POST">
@@ -39,7 +40,8 @@
               >
             </td>
             <td>
-              <%= interview.date.getDate()+"/"+interview.date.getMonth() %>
+              <%= interview.date.getDate()+"/"+(interview.date.getMonth()+1) %>
+              %>
             </td>
           </tr>
 

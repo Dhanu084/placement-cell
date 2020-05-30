@@ -8,6 +8,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   </head>
   <body>
+    <%- include('_navbar.ejs') %>
     <aside>
       <h4>Register Student</h4>
       <form action="/students/create-student" method="POST">
@@ -45,7 +46,7 @@
           <option value="Jan 2020" name="Jan 2020">Jan 2020</option>
           <option value="Feb 2020" name="Feb 2020">Feb 2020</option>
         </select>
-        <button>Fetch</button>
+        <button id="fetch">Fetch</button>
       </form>
       <p>Listing <%= students.length%> students</p>
       <div id="available-students">

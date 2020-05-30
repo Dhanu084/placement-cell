@@ -35,7 +35,7 @@ module.exports.createInterview = async function (req, res) {
 module.exports.singleInterview = async function (req, res) {
   try {
     let interview = await Interview.findById(req.params.id);
-    let students = await Student.find({});
+    let students = await Student.find({}).populate('courses');
     let schedules = await InterviewSchedule.find({ interview: interview.id })
       .populate('interview')
       .populate('student');
